@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JAIPONG! Jelajah Tari Sunda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animasi pembuka (hilang otomatis / klik untuk lewati) -->
+<div id="intro"><div class="intro-word"><span style="--i:0">J</span><span style="--i:1">A</span><span style="--i:2">I</span><span style="--i:3">P</span><span style="--i:4">O</span><span style="--i:5">N</span><span style="--i:6">G</span><span style="--i:7">!</span></div></div>
+
+<!-- NAVIGASI: semua tombol data-go="id-halaman" otomatis berfungsi -->
+<header class="nav">
+  <button class="logo" data-go="home">JAIPONG!</button>
+  <nav id="menu">
+    <button data-go="home">Tepas</button>
+    <button data-go="journey">Lalampahan Diajar</button>
+    <button data-go="infographic">Rohangan Infografis</button>
+    <button data-go="playground">Kaulinan</button>
+    <button data-go="board">Papan Jawara</button>
+  </nav>
+  <div class="meter" title="Progress belajar"><i id="bar"></i><span id="pct">0%</span></div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section class="page on" id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <h1 class="big"><span>J</span><span>A</span><span>I</span><span>P</span><span>O</span><span>N</span><span>G</span><span>!</span></h1>
+      <p class="lead">Ibing rahayat Sunda anu lincah tur pinuh ku sumanget. Baca materina, ulik infografisna, tuluy uji kamampuh hidep ngaliwatan kaulinan!</p>
+      <div class="cta">
+        <button class="btn pink" data-go="journey">Mimitian Ngajalajah</button>
+        <button class="btn yellow" data-go="playground">Hayu Maén!</button>
+      </div>
+    </div>
+    <div class="hero-art">
+      <span class="stk s1">⭐</span><span class="stk s2">🌸</span><span class="stk s3">✨</span><span class="stk s4">💖</span>
+      <div id="bubble" class="bubble">tepak!</div>
+      <!-- Kendang (klik untuk memukul) -->
+      <button id="kendang" aria-label="Pukul kendang">
+        <svg viewBox="0 0 220 160"><ellipse cx="40" cy="80" rx="22" ry="62" fill="#ffe48a" stroke="#35254a" stroke-width="5"/><path d="M40 18 Q110 40 180 18 L180 142 Q110 120 40 142Z" fill="#ffb6d1" stroke="#35254a" stroke-width="5"/><ellipse cx="180" cy="80" rx="22" ry="62" fill="#b8defc" stroke="#35254a" stroke-width="5"/><path d="M70 30 L90 130 M110 36 L110 124 M150 30 L130 130" stroke="#35254a" stroke-width="4" fill="none"/></svg>
+      </button>
+      <small class="hint">Klik kendangnya!</small>
+    </div>
+  </div>
+  <div class="marquee"><div>🥁 gesit &nbsp; 💃 rancagé &nbsp; 🎶 kendang &nbsp; 🌸 sampur &nbsp; ⭐ Sunda &nbsp; 🥁 gesit &nbsp; 💃 rancagé &nbsp; 🎶 kendang &nbsp; 🌸 sampur &nbsp; ⭐ Sunda &nbsp;</div></div>
+</section>
+
+<!-- ============ LEARNING JOURNEY ============ -->
+<section class="page" id="journey">
+  <h2 class="title">Lalampahan Diajar <small id="jProg"></small></h2>
+  <div class="grid" id="cards"></div>
+  <h3 class="sub">Galur Waktu Lahirna Jaipong</h3>
+  <p class="muted">Klik titik-titikna pikeun ningali materina.</p>
+  <div class="timeline"><div id="tl" class="tl"></div><div id="tlbox" class="card white tlbox"></div></div>
+</section>
+
+<!-- ============ INFOGRAPHIC ROOM ============ -->
+<section class="page" id="infographic">
+  <h2 class="title">Rohangan Infografis</h2>
+  <p class="muted">Klik infografisna pikeun ngagedéan, tuluy paké tombol + jeung −.</p>
+  <div class="grid" id="infos"></div>
+</section>
+
+<!-- ============ PLAYGROUND ============ -->
+<section class="page" id="playground">
+  <h2 class="title">Kaulinan</h2>
+  <label class="who">Ngaran pamaén <input id="name" maxlength="16" placeholder="Réréncangan Jaipong"></label>
+  <div class="gtabs" id="gtabs">
+    <button data-g="quiz">🧠 Quiz</button>
+    <button data-g="match">🧩 Cocokkan</button>
+    <button data-g="order">🔢 Susun Gerak</button>
+  </div>
+  <div id="gpanel" class="card white gpanel"><p class="muted">Pilih kaulinan di luhur kanggo ngamimitian.</p></div>
+</section>
+
+<!-- ============ LEADERBOARD ============ -->
+<section class="page" id="board">
+  <h2 class="title">Papan Jawara</h2>
+  <p class="muted">Rengking skor dina browser ieu. 10 skor pangluhurna dipidangkeun.</p>
+  <ol id="lb" class="lb"></ol>
+  <button class="btn blue" id="resetBoard">Reset skor</button>
+</section>
+</main>
+
+<!-- Modal umum (materi & infografis) -->
+<div id="modal"><div class="mbox"><button id="mclose" aria-label="Tutup">✕</button><div id="mbody"></div></div></div>
+
+<footer>Didamel kalayan 💖 kanggo ngamumulé Jaipong</footer>
+<script src="script.js"></script>
+</body>
+</html>
